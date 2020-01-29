@@ -2,6 +2,20 @@
   text-align: center;
 }
 
+body {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/VST_image_of_the_Hercules_galaxy_cluster.jpg/1280px-VST_image_of_the_Hercules_galaxy_cluster.jpg') no-repeat center center fixed;
+}
+
+.header {
+  background-color: white;
+  font-family: 'Times New Roman';
+}
+
+.directory-name {
+  font-family: 'Times New Roman';
+  text-emphasis-color: black;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,6 +40,15 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.directory-image {
+  width: 100px;
+  height: 100px;
+}
+
+.directory-entry {
+  background-color: white;
 }
 
 @keyframes App-logo-spin {

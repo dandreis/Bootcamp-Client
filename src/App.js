@@ -11,26 +11,39 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/getSogetiEmployees')
+    fetch('http://localhost:3005/getSogetiEmployees')
     .then(employees => employees.json())
-    .then(employees => {
-      console.log(employees)
+    .then(_employees => {
+      console.log(_employees)
+      this.setState( {
+        employees: _employees
+      })
     })
     .catch(err => console.log(err))
   }
 
   render(){
     return (
-      <div className="App">
-        <h1> Sogeti Employee Directory </h1>
-        <ol>
+      <div className="App container">
+        <h1 className="header"> Sogeti Employee Directory </h1>
+        <div className="row">
+          
         { this.state.employees.map((employee, index) => {
           return (
-              <li key={index}>{employee.name}</li>
+            <div className="media col-12 mb-4 p-3 directory-entry">
+            <img src={employee.img} className="mr-3 directory-image" alt="..."/>
+            <div className="media-body">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+          </div>
+              <h5 className="mt-0 directory-name">{employee.name}</h5>
+              {employee.location}
+            </div>
+          </div>
             )
           })
         }
-        </ol>
+        </div>
       </div>
     );
   }
