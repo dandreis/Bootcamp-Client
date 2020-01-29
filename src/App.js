@@ -37,7 +37,7 @@ class App extends React.Component {
               <span class="sr-only">Loading...</span>
           </div>
               <h5 className="mt-0 directory-name">{employee.name}</h5>
-              {employee.location}
+              unknown
             </div>
           </div>
             )
